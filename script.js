@@ -13,7 +13,9 @@ function getHumanChoice() {
     return "You: " + Humanchoice
 } 
 
+function playRound(humanChoice, computerChoice) {
 
+}
 
 console.log(getHumanChoice());
 console.log(getComputerChoice());
