@@ -8,5 +8,12 @@ function getComputerChoice() {
 }
 
 
+function getHumanChoice() {
+    let Humanchoice = prompt("Rock! Paper! Scissors!");
+    return "You: " + Humanchoice
+} 
 
+
+
+console.log(getHumanChoice());
 console.log(getComputerChoice());
