@@ -5,9 +5,12 @@ const paperButton = document.querySelector("#paper");
 const scissorsButton = document.querySelector("#scissors");
 
 const messageElem = document.createElement("div");
+messageElem.classList.add("messageElem");
 
 const humanScoreElem = document.createElement("div");
+humanScoreElem.classList.add("humanScoreElem");
 const computerScoreElem = document.createElement("div");
+computerScoreElem.classList.add("computerScoreElem");
 
 container.append(messageElem, humanScoreElem, computerScoreElem);
 
