@@ -1,6 +1,15 @@
+const container = document.querySelector("div");
+
 const rockButton = document.querySelector("#rock");
 const paperButton = document.querySelector("#paper");
 const scissorsButton = document.querySelector("#scissors");
+
+const messageElem = document.createElement("div");
+
+const humanScoreElem = document.createElement("div");
+const computerScoreElem = document.createElement("div");
+
+container.append(messageElem, humanScoreElem, computerScoreElem);
 
 let humanScore = 0;
 let computerScore = 0;
@@ -18,31 +27,31 @@ function playRound(humanChoice, computerChoice) {
     case "rock":
       message =
         humanChoice === "scissors"
-          ? ((computerScore += 1), "You lose!")
+          ? ((computerScore += 1), "You lose! Rock beats scissors!")
           : humanChoice === "paper"
-            ? ((humanScore += 1), "You win!")
-            : "Try again!";
+            ? ((humanScore += 1), "You win! Paper beats rock!")
+            : "It's a tie. Try again!";
       break;
     case "paper":
       message =
         humanChoice === "rock"
-          ? ((computerScore += 1), "You lose!")
+          ? ((computerScore += 1), "You lose! Paper beats rock!")
           : humanChoice === "scissors"
-            ? ((humanScore += 1), "You win!")
-            : "Try again!";
+            ? ((humanScore += 1), "You win! Scissors beats paper!")
+            : "It's a tie. Try again!";
       break;
     case "scissors":
       message =
         humanChoice === "rock"
-          ? ((humanScore += 1), "You win!")
+          ? ((humanScore += 1), "You win! Rock beats scissors!")
           : humanChoice === "paper"
-            ? ((computerScore += 1), "You lose!")
-            : "Try again!";
+            ? ((computerScore += 1), "You lose! Scissors beats paper!")
+            : "It's a tie. Try again!";
   }
 
-  console.log("You: " + humanChoice.charAt(0).toUpperCase() + humanChoice.slice(1));
-  console.log("Computer: " + computerChoice.charAt(0).toUpperCase() + computerChoice.slice(1));
-  console.log(message);
+  messageElem.textContent = message;
+  humanScoreElem.textContent = `You: ${humanScore}`;
+  computerScoreElem.textContent = `Computer: ${computerScore}`;
 }
 
 rockButton.addEventListener("click", () =>
