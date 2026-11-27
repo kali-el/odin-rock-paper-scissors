@@ -4,15 +4,14 @@ const rockButton = document.querySelector("#rock");
 const paperButton = document.querySelector("#paper");
 const scissorsButton = document.querySelector("#scissors");
 
-const messageElem = document.createElement("div");
-messageElem.classList.add("messageElem");
 
-const humanScoreElem = document.createElement("div");
-humanScoreElem.classList.add("humanScoreElem");
-const computerScoreElem = document.createElement("div");
-computerScoreElem.classList.add("computerScoreElem");
+// const humanScoreElem = document.createElement("div");
+// humanScoreElem.classList.add("humanScoreElem");
+// const computerScoreElem = document.createElement("div");
+// computerScoreElem.classList.add("computerScoreElem");
 
-container.append(messageElem, humanScoreElem, computerScoreElem);
+scoreDiv.append(humanScoreElem, computerScoreElem);
+container.append(messageElem, scoreDiv);
 
 let humanScore = 0;
 let computerScore = 0;
@@ -67,6 +66,7 @@ scissorsButton.addEventListener("click", () =>
   playRound("scissors", getComputerChoice()),
 );
 
+rockButton.d
 
 
 
